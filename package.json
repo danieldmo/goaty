@@ -1,0 +1,19 @@
+{
+  "name": "goaty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "npm start",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "goat",
+    "qwil"
+  ],
+  "author": "daniel@qwil.co",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "google-images": "^2.1.0"
+  }
+}

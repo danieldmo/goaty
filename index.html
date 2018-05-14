@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>GOATED!</title>
+	<script
+  		src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  	crossorigin="anonymous"></script>
+	 <style type="text/css">
+	 	* {
+	 		margin: 0;
+	 		padding: 0;
+	 	}
+	 	img {
+	 		width: 100vw;
+	 	}
+
+	 	form {
+	 		position: absolute;
+	 		top: 24px;
+	 		left: 24px;
+	 		display: flex;
+	 	}
+
+	 	input {
+	 		padding: 16px 12px;
+	 		font-size: 16px;
+	 		min-width: 300px; 
+	 	}
+
+	 	button {
+	 		font-size: 16px;
+	 		padding: 16px 12px;
+	 		background: #5194FC;
+	 		color: white;
+	 		margin-left: 8px;
+	 		border: solid 1px #5194FC;
+	 		border-radius: 4px;
+	 	}
+	 </style>
+</head>
+<body>
+	<img id="image" />
+
+	<form>
+	  <div>
+	    <input type="text" name="name" placeholder="Whose computer is this?!"/>
+	  </div>
+	  <div>
+	    <button type="submit"id="submit-form">Submit</button>
+	  </div>
+	</form>
+
+	<script>
+		var imageIndex = 0;
+		var intervalTimer = 1000;
+		var images = [
+			'https://www.veterantv.com/wp-content/uploads/2017/08/f5d784aa1eabbde15ba5e2d90c3ba828.jpg',
+			'https://www.washingtonian.com/wp-content/uploads/2017/06/6-30-17-goat-yoga-congressional-cemetery-1-994x559.jpg',
+			'http://dreamstop.com/wp-content/uploads/2016/06/goat-dreaming.jpg',
+			'https://cdn.modernfarmer.com/wp-content/uploads/2017/06/BlueHeronGoat.png',
+			'http://cdn.playbuzz.com/cdn/c1ffedc1-2f64-4503-8c91-689bb8c48218/6b479d2c-2360-42c8-87d6-59c040027fdf_560_420.jpg',
+			'https://vignette.wikia.nocookie.net/cryptidz/images/3/38/Goat-5-700x450.jpg/revision/latest?cb=20180207212510',
+			'https://thenypost.files.wordpress.com/2017/04/goat.jpg?quality=90&strip=all&w=618&h=410&crop=1',
+		];
+
+		setInterval(() => {
+			document.getElementById('image').src = images[imageIndex];
+			if (++imageIndex === images.length) {
+				imageIndex = 0;
+			}
+		}, intervalTimer);
+		
+
+		var $form = $('form'),
+		url = 'https://script.google.com/macros/s/AKfycby3MuniY-Vw8V8qvovJzng4qfSQc2VqAi8BxgLmvR7L0JKnd3eJ/exec';
+
+		$('form').submit(function(e) {
+			e.preventDefault();
+			var jqxhr = $.ajax({
+				url: url,
+				method: 'POST',
+				dataType: 'json',
+				data: $form.serialize(),
+			}).success(() => alert('GOATED!'));
+		})
+
+	</script>
+</body>
+</html>
