@@ -11,6 +11,9 @@
     "goat",
     "qwil"
   ],
+  "engines": {
+    "node": "4.1.1"
+  },
   "author": "daniel@qwil.co",
   "license": "ISC",
   "dependencies": {
