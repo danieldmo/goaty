@@ -73,20 +73,19 @@
 			}
 		}, intervalTimer);
 
-
 		var $form = $('form'),
 		url = 'https://script.google.com/macros/s/AKfycby3MuniY-Vw8V8qvovJzng4qfSQc2VqAi8BxgLmvR7L0JKnd3eJ/exec';
 
 		$('form').submit(function(e) {
 			e.preventDefault();
+			$('form').hide();
 			var jqxhr = $.ajax({
 				url: url,
 				method: 'POST',
 				dataType: 'json',
 				data: $form.serialize(),
-			}).success(() => alert('GOATED!'));
-		})
-
+			}).success(() => console.log('GOATED'));
+		});
 	</script>
 </body>
 </html>
